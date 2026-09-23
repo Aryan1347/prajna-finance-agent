@@ -10,7 +10,7 @@ Uses a **ReAct (Reasoning + Acting) agent loop** backed by a quantized local LLM
 
 - **ReAct Agent Loop** — LLM reasons over tool outputs iteratively before responding
 - **5 Financial Tools** — live price, fundamentals, news, watchlist read/write
-- **Local LLM Inference** — llama.cpp with GGUF models (GPU via CUDA, CPU fallback via mmap)
+- **Local LLM Inference** — llama.cpp with GGUF models (GPU via CUDA, CPU fallback)
 - **Session Memory** — Redis cache with TTL-based expiry (1hr)
 - **Long-term Memory** — Qdrant vector store with `all-MiniLM-L6-v2` embeddings
 - **Observability** — per-tool latency tracking via decorator (`observability.py`)
