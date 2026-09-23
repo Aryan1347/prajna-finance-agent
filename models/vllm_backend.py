@@ -25,12 +25,12 @@ class VLLMBackend(BaseModel):
         except Exception:
             return False
 
-    def generate(self, prompt: str, schema: dict | None = None) -> str:
+    def generate(self, prompt: str, schema: dict | None = None, max_tokens: int = 512) -> str:
         client = self._get_client()
         kwargs = {
             "model": self.model_name,
             "messages": [{"role": "user", "content": prompt}],
-            "max_tokens": 512,
+            "max_tokens": max_tokens,
             "temperature": 0.1,
         }
         if schema:
